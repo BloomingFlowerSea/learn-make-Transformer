@@ -47,9 +47,9 @@ class TransformerEmbedding(nn.Module):
         return X
 
 
-class MutiHeadAttention(nn.Module):
+class MultiHeadAttention(nn.Module):
     def __init__(self, d_model, n_head):
-        super(MutiHeadAttention, self).__init__()
+        super(MultiHeadAttention, self).__init__()
         self.n_head = n_head
         self.d_model = d_model
 
@@ -126,7 +126,7 @@ class AddNorm(nn.Module):
 class EncoderLayer(nn.Module):
     def __init__(self, d_model, ffn_hidden, n_head, dropout=0.1):
         super(EncoderLayer, self).__init__()
-        self.attention = MutiHeadAttention(d_model, n_head)
+        self.attention = MultiHeadAttention(d_model, n_head)
         self.addnorm1 = AddNorm(d_model, dropout)
         self.ffn = PositionwiseFeedForward(d_model, ffn_hidden, dropout)
         self.addnorm2 = AddNorm(d_model, dropout)
@@ -158,9 +158,9 @@ class Encoder(nn.Module):
 class DecoderLayer(nn.Module):
     def __init__(self, d_model, ffn_hidden, n_head, dropout=0.1):
         super(DecoderLayer, self).__init__()
-        self.attention1 = MutiHeadAttention(d_model, n_head)
+        self.attention1 = MultiHeadAttention(d_model, n_head)
         self.addnorm1 = AddNorm(d_model, dropout)
-        self.attention2 = MutiHeadAttention(d_model, n_head)
+        self.attention2 = MultiHeadAttention(d_model, n_head)
         self.addnorm2 = AddNorm(d_model, dropout)
         self.ffn = PositionwiseFeedForward(d_model, ffn_hidden, dropout)
         self.addnorm3 = AddNorm(d_model, dropout)
