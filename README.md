@@ -1,6 +1,6 @@
 # 🚀 深度学习实践项目
 
-> 从零开始的深度学习之旅：涵盖经典网络架构、序列模型、Transformer、目标检测等核心内容
+> 从零开始的深度学习之旅：涵盖经典网络架构、序列模型、Transformer、目标检测与NLP专项练习等核心内容
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
@@ -11,6 +11,13 @@
 ## 📚 项目简介
 
 本项目是一个完整的深度学习学习仓库，包含了从基础神经网络到前沿模型的系统性实践代码。所有代码均为手写实现，旨在深入理解各种模型的核心原理。
+
+## 🆕 最近更新
+
+- 新增 `NDSL学习记录/`：补充编码器-解码器、Bahdanau注意力、机器翻译等主题练习
+- 新增 `jiji/`：包含独立实验脚本与Notebook
+- 顶层补充 `文本预处理.ipynb`、`语言模型.ipynb` 两个NLP基础Notebook
+- README 中的目录与文件名已与当前仓库实际内容同步
 
 ### ✨ 核心特点
 
@@ -34,7 +41,7 @@ learn2/
 │   └── LeNet.py                # LeNet-5实现
 │
 ├── 📁 序列模型实践/             # 序列模型与注意力机制
-│   ├── attention.ipynb         # 注意力机制详解
+│   ├── attrntion.ipynb         # 注意力机制详解
 │   ├── mult_attention.ipynb    # 多头注意力
 │   ├── QKV.ipynb              # Query-Key-Value详解
 │   ├── BERT.ipynb             # BERT模型实现
@@ -42,12 +49,25 @@ learn2/
 │   ├── transformer.ipynb      # Transformer实践
 │   ├── seq2seq.ipynb          # Seq2Seq模型
 │   ├── rnn.py                 # RNN实现
-│   ├── my_transformer.ipynb   # 自定义Transformer
+│   ├── my_transfomer.ipynb    # 自定义Transformer
+│   ├── data.ipynb             # 序列数据处理
+│   ├── NW.ipynb               # 额外网络结构实验
 │   └── tran_bert.ipynb        # Transformer与BERT对比
+│
+├── 📁 NDSL学习记录/             # NLP/序列建模专题练习
+│   ├── 编码器-解码器.ipynb      # Encoder-Decoder结构
+│   ├── 注意力打分函数.ipynb      # 注意力打分函数实践
+│   ├── Bahdanau注意力.ipynb    # Bahdanau Attention
+│   ├── 机器翻译数据集.ipynb      # 翻译数据处理
+│   └── 李沐transformer.ipynb   # Transformer学习记录
+│
+├── 📁 jiji/                    # 独立实验目录
+│   ├── main.py                # 实验脚本
+│   └── work.ipynb             # 实验Notebook
 │
 ├── 📁 目标检测学习/             # 计算机视觉-目标检测
 │   ├── data_sety.ipynb        # 数据集处理
-│   └── example.ipynb          # 检测示例
+│   └── exmple.ipynb           # 检测示例
 │
 ├── 📁 data/                    # 数据集目录
 │   ├── FashionMNIST/          # 时尚MNIST数据集
@@ -66,6 +86,8 @@ learn2/
 ├── 📓 mlp_j.ipynb            # 多层感知机
 ├── 📓 rnn.ipynb              # RNN详解
 ├── 📓 softmax.ipynb          # Softmax详解
+├── 📓 文本预处理.ipynb         # NLP文本预处理
+├── 📓 语言模型.ipynb          # 语言模型基础
 └── 📓 使用GPU.ipynb          # GPU加速指南
 
 ```
@@ -95,12 +117,14 @@ learn2/
 | 内容 | 文件 | 核心概念 |
 |------|------|----------|
 | RNN基础 | `rnn.ipynb`, `序列模型实践/rnn.py` | 循环神经网络 |
-| 注意力机制 | `序列模型实践/attention.ipynb` | Attention原理 |
+| 注意力机制 | `序列模型实践/attrntion.ipynb` | Attention原理 |
 | QKV机制 | `序列模型实践/QKV.ipynb` | 查询-键-值详解 |
 | 多头注意力 | `序列模型实践/mult_attention.ipynb` | Multi-Head Attention |
 | Seq2Seq | `序列模型实践/seq2seq.ipynb` | 序列到序列模型 |
 | **Transformer** | `手写transformer/Transformer.py` | 完整手写实现 ⭐ |
 | BERT | `序列模型实践/BERT.ipynb` | 预训练语言模型 |
+| 文本预处理 | `文本预处理.ipynb` | 分词与文本清洗 |
+| 语言模型 | `语言模型.ipynb` | LM建模基础 |
 
 ### 4️⃣ 计算机视觉
 
@@ -198,7 +222,7 @@ graph TD
 
 3. **序列模型阶段**
    - `rnn.ipynb` - RNN基础
-   - `序列模型实践/attention.ipynb` - 注意力机制
+   - `序列模型实践/attrntion.ipynb` - 注意力机制
    - `序列模型实践/QKV.ipynb` - QKV详解
 
 4. **Transformer阶段** ⭐
